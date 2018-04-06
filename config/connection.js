@@ -9,6 +9,8 @@ var connection = mysql.createConnection({
   database: "burger_db"
 });
 
+var PORT = process.env.PORT || 3000;
+
 // Make connection
 connection.connect(function(err) {
   if (err) {
@@ -16,6 +18,10 @@ connection.connect(function(err) {
     return;
   }
   console.log("Connected as id " + connection.threadId);
+});
+
+applicationCache.addEventListener(PORT, function() {
+  console.log("App listening on port id " + PORT);
 });
 
 // Export connection for our ORM to use
