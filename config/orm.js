@@ -1,5 +1,5 @@
 // Import mySQL connection
-var connection = require("../config/connection.js");
+var connection = require("connection.js");
 
 // Helper function to print three question marks
 function printQuestionsMarks(num) {
@@ -11,7 +11,7 @@ function printQuestionsMarks(num) {
   return arr.toString();
 };
 
-// Object for all our SQL statement functions
+// Object for the SQL statement functions
 var orm = {
   // The last variable cd represents the anonymous function being passed from server.js
   selectAll: function(tableInput, cb) {
@@ -56,7 +56,6 @@ var orm = {
       cb(result);
     });
   }
-
 };
 
 module.exports = orm;
